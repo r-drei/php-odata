@@ -1,5 +1,7 @@
 <?php
-declare (strict_types = 1);
+
+declare(strict_types=1);
+
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -9,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  */
 class Delete_Test extends TestCase
 {
-    const BASE_URL = 'https://services.odata.org/TripPinRESTierService/(S(xuux1chjqcxne5rksvekbvrw))/';
+    const BASE_URL = 'https://services.odata.org/TripPinRESTierService/';
     const ENTITY_NAME = 'Airline';
 
     public function testODataInsert()

@@ -1,11 +1,8 @@
 language: php
-
 php:
   - 7.2
-  
 before_script:
- - composer self-update
- - composer install --prefer-source --no-interaction --dev
-# Commands you want to run that will verify your build.
+  - composer self-update
+  - composer install --prefer-source --no-interaction
+# Run phpunit tests.
 script: phpunit
-
