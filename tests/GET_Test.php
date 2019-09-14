@@ -92,7 +92,7 @@ class Get_Test extends TestCase
         $this->assertCount(Get_Test::ENTITY_TEST_FILTER_COUNT, $data);
 
         foreach ($data as $key => $obj) {
-            $this->assertContains('Los Angeles', $obj->Name);
+            $this->assertStringContainsString('Los Angeles', $obj->Name);
         }
     }
 }
