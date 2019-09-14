@@ -65,4 +65,4 @@ Remove a Entity by Key.
 
 ## Documentation and Ressources
 * [OData.org](http://www.odata.org)
-* [OData v4 Reference Services (R/W)](https://services.odata.org/v4/(S(vuvl2lo1td4r1lzfpne2zqlz))/TripPinServiceRW/$metadata')
+* [OData v4 Reference Services (R/W)](https://services.odata.org/v4/TripPinServiceRW/$metadata)
