@@ -11,22 +11,26 @@ use PHPUnit\Framework\TestCase;
  */
 class Update_Test extends TestCase
 {
-    const BASE_URL = 'https://services.odata.org/TripPinRESTierService/';
-    const ENTITY_NAME = 'Airline';
+    const BASE_URL = 'https://services.odata.org/v4/(S(vuvl2lo1td4r1lzfpne2zqlz))/TripPinServiceRW/';
+    const ENTITY_NAME = 'Airlines';
 
-    public function testODataInsert()
+    public function testODataUpdate()
     {
         // Get Client
         $client = new \rdrei\odata\ODataClient(['base_uri' => Update_Test::BASE_URL]);
 
         // Create Handler & Query
         $entityHandler = $client->CreateHandler(Update_Test::ENTITY_NAME);
-        $newAirline = array(
-            'AirlineCode' => 'ODATA',
-            'Name' => 'ODataFlyAway'
+        $testAirline = array(
+            'AirlineCode' => 'foobar',
+            'Name' => 'foobar Airline',
         );
-        $reponse = $entityHandler->Update("ODATA", $newAirline);
-        // Check if 3 People givven
-        //$this->assertNotEmpty($data);
+        $entityHandler->Insert($testAirline);
+
+        $testAirline["Name"] = "the foobar Airlines";
+        $reponse = $entityHandler->Update('foobar', $testAirline);
+
+        // Check no error 
+        $this->assertEmpty($reponse);
     }
 }

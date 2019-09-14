@@ -1,4 +1,6 @@
-<?php namespace rdrei\odata;
+<?php
+
+namespace rdrei\odata;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
@@ -39,6 +41,10 @@ class ODataRequest
         ]);
     }
 
+    /**
+     * Execute the Request
+     * @return mixed
+     */
     public function execute($entity, $body = null)
     {
         $resp = null;
@@ -83,7 +89,9 @@ class ODataRequest
 
     private function getReqestParams($body = null)
     {
-        $params = [];
+        $params = [
+            'headers' => ['Accept-Encoding' => 'gzip'],
+        ];
         if (isset($body)) {
             $params['json'] = $body;
         }

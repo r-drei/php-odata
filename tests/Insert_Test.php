@@ -11,8 +11,8 @@ use PHPUnit\Framework\TestCase;
  */
 class Insert_Test extends TestCase
 {
-    const BASE_URL = 'https://services.odata.org/TripPinRESTierService/';
-    const ENTITY_NAME = 'Airline';
+    const BASE_URL = 'https://services.odata.org/v4/(S(vuvl2lo1td4r1lzfpne2zqlz))/TripPinServiceRW/';
+    const ENTITY_NAME = 'Airlines';
 
     public function testODataInsert()
     {
@@ -21,12 +21,13 @@ class Insert_Test extends TestCase
 
         // Create Handler & Query
         $entityHandler = $client->CreateHandler(Insert_Test::ENTITY_NAME);
-        $newAirline = array(
-            'AirlineCode' => 'ODATA',
-            'Name' => 'ODataFlyAway'
+        $testAirline = array(
+            'AirlineCode' => 'foobar',
+            'Name' => 'foobar Airline',
         );
-        $reponse = $entityHandler->Insert($newAirline);
-        // Check if 3 People givven
-        //$this->assertNotEmpty($data);
+        $reponse = $entityHandler->Insert($testAirline);
+
+        // Check if Created  
+        $this->assertNotEmpty($reponse);
     }
 }

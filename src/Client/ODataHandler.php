@@ -1,4 +1,6 @@
-<?php namespace rdrei\odata;
+<?php
+
+namespace rdrei\odata;
 
 /**
  *  ODataClient class to create OData Querys
@@ -33,9 +35,9 @@ class ODataHandler
 
     /**
      * Get request Elements under the criterias that are defined in a ODataQuery 
-     *
+     * Response
      * @param \rdrei\odata\ODataQuery $query
-     * @return Array
+     * @return mixed
      */
     public function Get($query = null)
     {
@@ -49,7 +51,7 @@ class ODataHandler
      * Insert create the givven Element in the OData Endpoint
      *
      * @param string $ressource
-     * @return void
+     * @return mixed
      */
     public function Insert($body)
     {
@@ -61,7 +63,7 @@ class ODataHandler
      * Update patch a Element in the OData Endpoint for the givven Key
      *
      * @param string $ressource
-     * @return void
+     * @return mixed
      */
     public function Update($key, $body)
     {
@@ -75,7 +77,7 @@ class ODataHandler
      * Delete remove a Element in the OData Endpoint by Key
      *
      * @param string $ressource
-     * @return void
+     * @return mixed
      */
     public function Delete($key)
     {

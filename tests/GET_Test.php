@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  */
 class Get_Test extends TestCase
 {
-    const BASE_URL = 'https://services.odata.org/TripPinRESTierService/';
+    const BASE_URL = 'https://services.odata.org/TripPinRESTierService/(S(4inqfyssrjg0smxyc5r0ryju))/';
     const ENTITY_NAME = 'Airports';
     const ENTITY_TEST_COUNT = 3;
     const ENTITY_KEY = 'KLAX';
