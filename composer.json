@@ -1,0 +1,26 @@
+{
+    "name": "rdrei/odata",
+    "description": "A simple PHP OData Client",
+    "keywords": ["odata", "client", "query-builder"],
+    "license": "MIT",
+    "authors": [{
+        "name": "rdrei",
+        "email": "info@r-drei.de"
+    }],
+    "type": "library",
+    "require": {
+        "php": ">=7.1",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "7.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "rdrei\\odata\\": "src/"
+        },
+        "classmap": [
+            "src/"
+        ]
+    }
+}
