@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use \rdrei\odata\ODataClient;
 
 /**
  * Get_Test
@@ -22,7 +23,7 @@ class Get_Test extends TestCase
     public function testODataGet()
     {
         // Get Client
-        $client = new \rdrei\odata\ODataClient(['base_uri' => Get_Test::BASE_URL]);
+        $client = new ODataClient(['base_uri' => Get_Test::BASE_URL]);
 
         // Create Handler & Query
         $entityHandler = $client->CreateHandler(Get_Test::ENTITY_NAME);
@@ -38,7 +39,7 @@ class Get_Test extends TestCase
     public function testODataGetPaged()
     {
         // Get Client
-        $client = new \rdrei\odata\ODataClient(['base_uri' => Get_Test::BASE_URL]);
+        $client = new ODataClient(['base_uri' => Get_Test::BASE_URL]);
 
         // Create Handler & Query
         $entityHandler = $client->CreateHandler(Get_Test::ENTITY_NAME);
@@ -58,7 +59,7 @@ class Get_Test extends TestCase
 
     public function testODataGetByKey()
     {
-        $client = new \rdrei\odata\ODataClient(['base_uri' => Get_Test::BASE_URL]);
+        $client = new ODataClient(['base_uri' => Get_Test::BASE_URL]);
         $entityHandler = $client->CreateHandler(Get_Test::ENTITY_NAME);
         $query = $client->CreateQuery();
         $query = $query->byKey(Get_Test::ENTITY_KEY); // Look at APIs $metadata for the Key Propertie;
@@ -77,7 +78,7 @@ class Get_Test extends TestCase
 
     public function testODataGetWithFilter()
     {
-        $client = new \rdrei\odata\ODataClient(['base_uri' => Get_Test::BASE_URL]);
+        $client = new ODataClient(['base_uri' => Get_Test::BASE_URL]);
         $entityHandler = $client->CreateHandler(Get_Test::ENTITY_NAME);
         $query = $client->CreateQuery();
         $query = $query->filter(Get_Test::ENTITY_FILTER); // Look at APIs $metadata for the Key Propertie;

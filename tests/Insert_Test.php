@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use \rdrei\odata\ODataClient;
 
 /**
  * Insert_Test
@@ -17,7 +18,7 @@ class Insert_Test extends TestCase
     public function testODataInsert()
     {
         // Get Client
-        $client = new \rdrei\odata\ODataClient(['base_uri' => Insert_Test::BASE_URL]);
+        $client = new ODataClient(['base_uri' => Insert_Test::BASE_URL]);
 
         // Create Handler & Query
         $entityHandler = $client->CreateHandler(Insert_Test::ENTITY_NAME);

@@ -4,7 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/rdrei/odata/downloads)](https://packagist.org/packages/rdrei/odata)
 [![License](https://poser.pugx.org/rdrei/odata/license)](https://packagist.org/packages/rdrei/odata)
 
-A small PHP OData Client 
+A small PHP OData Client based on [guzzlehttp](https://github.com/guzzle/guzzles).   
 
 ## Install
 ```bash
@@ -12,30 +12,41 @@ A small PHP OData Client
 ```
 
 ## Usage
+
+Import the ODataClient
+```php
+    use \rdrei\odata\ODataClient;
+    use \rdrei\odata\ODataQuery;
+```
+
 Create a ODataClient and a EntityHandler.
 ```php
-    $client = new \rdrei\odata\ODataClient(['url' => "https://services.odata.org/TripPinRESTierService"]);
-    $entityHandler = $client->CreateHandler("People");
+    $client = new ODataClient([
+        'url' => "https://<odata-server>/"
+    ]);
+
+    $entityHandler = $client->CreateHandler("EntityName");
 ```
 
 ### Get
 Get Enitities with a Query.
 ```php
-    $query = new \rdrei\odata\ODataQuery();
+    $query = new ODataQuery();
     $query = $query->skip(0)->take(10);
+    
     $result = $entityHandler->Get($query);
 ```
 
 ### Insert
-Add a new Entity.
+Create a new Entity.
 ```php
-    $entityHandler->Insert($people);
+    $entityHandler->Insert($entity);
 ```
 
 ### Update
-Change a Entity.
+Patch a Entity.
 ```php
-    $entityHandler->Update($key, $people);
+    $entityHandler->Update($key, $entity);
 ```
 
 ### Delete
@@ -54,4 +65,4 @@ Remove a Entity by Key.
 
 ## Documentation and Ressources
 * [OData.org](http://www.odata.org)
-
+* [OData v4 Reference Services (R/W)](https://services.odata.org/v4/(S(vuvl2lo1td4r1lzfpne2zqlz))/TripPinServiceRW/$metadata')

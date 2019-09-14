@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use \rdrei\odata\ODataClient;
 
 /**
  * Delete_Test
@@ -17,7 +18,7 @@ class Delete_Test extends TestCase
     public function testODataDelete()
     {
         // Get Client
-        $client = new \rdrei\odata\ODataClient(['base_uri' => Delete_Test::BASE_URL]);
+        $client = new ODataClient(['base_uri' => Delete_Test::BASE_URL]);
 
         // Create Handler & Query
         $entityHandler = $client->CreateHandler(Delete_Test::ENTITY_NAME);

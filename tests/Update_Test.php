@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
+use \rdrei\odata\ODataClient;
 
 /**
  * Update_Test
@@ -17,7 +18,7 @@ class Update_Test extends TestCase
     public function testODataUpdate()
     {
         // Get Client
-        $client = new \rdrei\odata\ODataClient(['base_uri' => Update_Test::BASE_URL]);
+        $client = new ODataClient(['base_uri' => Update_Test::BASE_URL]);
 
         // Create Handler & Query
         $entityHandler = $client->CreateHandler(Update_Test::ENTITY_NAME);
