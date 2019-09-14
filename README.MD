@@ -1,10 +1,11 @@
 # rdrei/odata
+[![Latest Stable Version](https://poser.pugx.org/rdrei/odata/v/stable)](https://packagist.org/packages/rdrei/odata)
+[![Total Downloads](https://poser.pugx.org/rdrei/odata/downloads)](https://packagist.org/packages/rdrei/odata)
+[![License](https://poser.pugx.org/rdrei/odata/license)](https://packagist.org/packages/rdrei/odata)
 
 A small PHP OData Client 
 
 ## Install
-
-*comming soon*
 ```bash
     composer require rdrei/odata
 ```
